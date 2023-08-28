@@ -215,6 +215,17 @@ map.on('load', function(){
     'source-layer': 'bnd',
     'paint':{
       'line-color':'#663399',
+      'line-opacity':[
+        'interpolate',
+        ['linear'],
+        ['zoom'],
+        8,
+        0.1,
+        9,
+        0.5,
+        10,
+        1
+      ],
       'line-width': 2
     }
   })
