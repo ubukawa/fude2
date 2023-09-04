@@ -188,34 +188,11 @@ map.on('load', function(){
       'text-halo-width':1
     }
   })
-/*
-  map.addLayer({
-    'filter':['==',['get','typecode'],1],
-    'maxzoom':15, //about 1:10,000 scale
-    'id':'geojson_area_A', //注視地区
-    'type':'line',
-    'source':'area_geojson',
-    'paint':{
-      'line-color':'#000000',
-      'line-width': 2
-    }
-  })
-  map.addLayer({
-    'filter':['==',['get','typecode'],2],
-    'maxzoom':15, //about 1:10,000 scale
-    'id':'geojson_area_B', //特別注視地区
-    'type':'line',
-    'source':'area_geojson',
-    'paint':{
-      'line-color':'#FF0000',
-      'line-width': 2
-    }
-  })
-*/
+
 map.addLayer({
     'minzoom':10, //about 1:10,000 scale
     'maxzoom':17, //about 1:10,000 scale
-    'id':'did', //町字
+    'id':'did', //did
     'type':'fill',
     'source':'did2020',
     'source-layer': 'did2020',
@@ -258,17 +235,17 @@ map.addLayer({
   map.addLayer({
     'minzoom':12, //about 1:10,000 scale
     'maxzoom':17, //about 1:10,000 scale
-    'id':'machi-label', //町字
+    'id':'did-label', //町字
     'type':'symbol',
-    'source':'estat',
-    'source-layer': 'bnd',
+    'source':'did2020',
+    'source-layer': 'did2020',
     'layout':{
-        'text-field': ['get','S_NAME'],
+        'text-field': ['get','CITYNAME'],
         'text-font': ['NotoSerifJP-SemiBold'],
         'text-size': 10
     },
     'paint':{
-      'text-color':'#663399'
+      'text-color':'#000000'
     }
   })
   map.addLayer({
