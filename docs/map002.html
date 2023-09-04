@@ -119,7 +119,7 @@ map.on('load', function(){
   });
   map.addSource('did2020',{
     type: 'vector',
-    tiles: ['https://ubukawa.github.io/did2020/04_tile/{z}/{x}/{y}.pbf'],
+    tiles: ['https://ubukawa.github.io/did2020/04_tile/did2020/{z}/{x}/{y}.pbf'],
     minzoom:10,
     maxzoom:16,
     attribution: 'e-Stat'
@@ -210,29 +210,6 @@ map.addLayer({
     }
   })
   map.addLayer({
-    'minzoom':10, //about 1:10,000 scale
-    'maxzoom':17, //about 1:10,000 scale
-    'id':'machi-l', //町字
-    'type':'line',
-    'source':'estat',
-    'source-layer': 'bnd',
-    'paint':{
-      'line-color':'#663399',
-      'line-opacity':[
-        'interpolate',
-        ['linear'],
-        ['zoom'],
-        8,
-        0.1,
-        9,
-        0.5,
-        10,
-        1
-      ],
-      'line-width': 2
-    }
-  })
-  map.addLayer({
     'minzoom':12, //about 1:10,000 scale
     'maxzoom':17, //about 1:10,000 scale
     'id':'did-label', //町字
@@ -291,8 +268,8 @@ map.addLayer({
     'geojson_kukaku': '区域のおおよその場所',
     'fude': '登記所備付地図データ',
     'fude-label': '登記所備付地図データ （ラベル）',
-    'machi-l':'eStatライン',
-    'machi-label':'eStatラベル'
+    'did2020':'DIDポリゴン',
+    'did-label':'DIDラベル',  
   };
   map.addControl(new MaplibreLegendControl(legend_target, {
     showDefault: false,
